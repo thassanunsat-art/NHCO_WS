@@ -1,26 +1,55 @@
-# 📊 Workshop 1: การสร้าง Pivot Table และ Dashboard ด้วย Excel
+# Workshop: Data Analytics with Excel Pivot Table & Interactive Dashboard
 
-## วัตถุประสงค์
-- จัดเตรียมข้อมูลสำหรับการวิเคราะห์
-- สร้าง Excel Table
-- สร้าง Pivot Table
-- สร้าง Pivot Chart
-- สร้าง Dashboard สำหรับผู้บริหาร
-- ใช้ Slicer เพื่อกรองข้อมูลแบบ Interactive
-- วิเคราะห์ Insight จาก Dashboard ร่วมกับ AI
+## หลักสูตร
 
----
+การวิเคราะห์ข้อมูลโครงการสุขภาพด้วย Pivot Table, Pivot Chart, KPI Card และ Interactive Dashboard
 
-# ชุดข้อมูลที่ใช้
+## ชุดข้อมูล
 
 ไฟล์
 
-**NHSO_Project_Monitoring.csv**
+**NHSO_Project_Monitoring_77Province.csv**
 
-## รายละเอียดข้อมูล
+- 77 จังหวัด
+- 5 ภูมิภาค
+- 12 เดือน
+- 10 ประเภทโครงการ
+- 9,120 รายการข้อมูล
 
-| Field | Description |
-|---------|---------|
+ใช้สำหรับการสร้าง
+
+- Pivot Table
+- Pivot Chart
+- KPI Card
+- Interactive Dashboard
+- AI Insight Analysis
+
+---
+
+# Learning Objectives
+
+หลังจบ Workshop ผู้เรียนสามารถ
+
+✅ สร้าง Pivot Table
+
+✅ สร้าง Pivot Chart
+
+✅ สร้าง KPI Card
+
+✅ สร้าง Dashboard
+
+✅ ใช้ Slicer กรองข้อมูล
+
+✅ วิเคราะห์ข้อมูลด้วย AI
+
+✅ สรุป Insight สำหรับผู้บริหาร
+
+---
+
+# Dataset Structure
+
+| Column | Description |
+|----------|----------|
 | Project_ID | รหัสโครงการ |
 | Project_Name | ชื่อโครงการ |
 | Region | ภูมิภาค |
@@ -31,112 +60,363 @@
 | KPI_Target | ค่าเป้าหมาย |
 | KPI_Actual | ผลการดำเนินงาน |
 | Participants | จำนวนผู้เข้าร่วม |
-| Satisfaction | คะแนนความพึงพอใจ |
+| Satisfaction | ความพึงพอใจ |
 
 ---
 
-# ส่วนที่ 1 : เตรียมข้อมูล
-โหลดข้อมูล 2 ไฟล์ 
-1) Thailand_77_Provinces.csv
-2) NHSO_Project_Monitoring.csv
+# Part 1: Data Preparation
 
-## Step 1 เปิดไฟล์ข้อมูล
+## Step 1 Import CSV
 
-1. เปิด Microsoft Excel
-2. เลือกเมนู
-   Data → From Text/CSV
-3. เลือกไฟล์
-   NHSO_Project_Monitoring.csv
-4. กด Load
-5. เลือกเมนู
-   Home → New Query → New Source → File →Text/Csv 
-6. เลือกไฟล์
-   Thailand_77_Provinces.csv
-7. กด OK
+เปิด Excel
 
----
+เลือก
 
-## Step 2 ตรวจสอบคุณภาพข้อมูล
-ตรวจสอบว่า
-✅ ไม่มีแถวว่าง
-✅ ไม่มีคอลัมน์ว่าง
-✅ Header อยู่แถวแรก
-✅ ข้อมูล Budget และ Actual_Spend เป็นตัวเลข
-✅ Satisfaction เป็นตัวเลขทศนิยม
+```text
+Data
+→ From Text / CSV
+```
+
+เลือกไฟล์
+
+```text
+NHSO_Project_Monitoring_77Province.csv
+```
+
+กด
+
+```text
+Load
+```
 
 ---
 
-## Step 3 แปลงข้อมูลเป็น Table
+## Step 2 Convert to Table
 
-1. คลิกภายในชุดข้อมูล
-2. กด
+เลือกข้อมูลทั้งหมด
+
 ```text
 Ctrl + T
 ```
-3. เลือก
+
+ติ๊ก
+
 ```text
-My Table Has Headers
+My table has headers
 ```
-4. กด OK
-5. เปลี่ยนชื่อ Table เป็น
+
+---
+
+## Step 3 Rename Table
+
+เปลี่ยนชื่อ
+
 ```text
 tbl_Project
 ```
+
 ---
 
-# ส่วนที่ 2 : สร้าง Pivot Table
-## Workshop 1 : วิเคราะห์งบประมาณตามจังหวัด
-### Step 1
-เลือกข้อมูลใน Table
----
-### Step 2
+# Part 2: Create First Pivot Table
+
+## Budget by Region
+
 เลือก
+
 ```text
 Insert
 → Pivot Table
 ```
+
 ---
 
-### Step 3
 เลือก
 
 ```text
 New Worksheet
 ```
+
 ---
-### Step 4
-กำหนดฟิลด์
-Rows
-```text
-Province
-```
-Values
+
+เปลี่ยนชื่อ Sheet
 
 ```text
-Budget
+Pivot_Budget
 ```
----
-### ผลลัพธ์
-Pivot Table จะแสดงงบประมาณรวมแยกตามจังหวัด
 
 ---
 
-### คำถามวิเคราะห์
-
-- จังหวัดใดได้รับงบประมาณสูงสุด
-- จังหวัดใดได้รับงบประมาณต่ำสุด
-
----
-
-# Workshop 2 : วิเคราะห์ KPI ตามภูมิภาค
-
-## สร้าง Pivot Table ใหม่
+## Configure Fields
 
 Rows
 
 ```text
 Region
 ```
+
+---
+
+Values
+
+```text
+Budget
+```
+
+---
+
+ผลลัพธ์
+
+| Region | Budget |
+|----------|----------|
+| North | xxx |
+| Central | xxx |
+| Northeast | xxx |
+| East | xxx |
+| South | xxx |
+
+---
+
+# Workshop 1
+
+## วิเคราะห์งบประมาณรายภูมิภาค
+
+ตอบคำถาม
+
+- ภูมิภาคใดได้รับงบประมาณมากที่สุด
+- ภูมิภาคใดได้รับงบประมาณน้อยที่สุด
+
+---
+
+# Part 3: Create KPI Pivot Table
+
+สร้าง Sheet
+
+```text
+Pivot_KPI
+```
+
+---
+
+Rows
+
+ไม่ต้องใส่
+
+---
+
+Values
+
+```text
+Sum of Budget
+```
+
+```text
+Sum of Actual_Spend
+```
+
+```text
+Count of Project_ID
+```
+
+```text
+Average of KPI_Actual
+```
+
+---
+
+ผลลัพธ์
+
+```text
+Budget
+Actual Spend
+Projects
+Average KPI
+```
+
+---
+
+# Workshop 2
+
+## วิเคราะห์ตัวชี้วัดภาพรวม
+
+ตอบคำถาม
+
+- งบประมาณรวมเท่าไร
+- เบิกจ่ายเท่าไร
+- จำนวนโครงการทั้งหมด
+- KPI เฉลี่ยระดับประเทศ
+
+---
+
+# Part 4: Create KPI Cards
+
+สร้าง Sheet
+
+```text
+Dashboard
+```
+
+---
+
+## Card 1: Budget
+
+เซลล์
+
+```excel
+B3
+```
+
+สูตร
+
+```excel
+='Pivot_KPI'!B4
+```
+
+---
+
+หัวข้อ
+
+```text
+B2 = Total Budget
+```
+
+---
+
+## Card 2: Budget Utilization
+
+เซลล์
+
+```excel
+E3
+```
+
+สูตร
+
+```excel
+='Pivot_KPI'!B5/'Pivot_KPI'!B4
+```
+
+---
+
+Format
+
+```text
+Percentage
+```
+
+---
+
+## Card 3: Projects
+
+เซลล์
+
+```excel
+H3
+```
+
+สูตร
+
+```excel
+='Pivot_KPI'!B6
+```
+
+---
+
+## Card 4: KPI Achievement
+
+เซลล์
+
+```excel
+K3
+```
+
+สูตร
+
+```excel
+='Pivot_KPI'!B7
+```
+
+---
+
+Format
+
+```text
+Percentage
+```
+
+---
+
+# Formatting KPI Cards
+
+เลือกช่วง
+
+```text
+B2:C4
+```
+
+ใส่
+
+```text
+Fill Color : Dark Blue
+
+Font Color : White
+
+Font Size : 24
+```
+
+---
+
+ทำซ้ำกับ
+
+```text
+E2:F4
+
+H2:I4
+
+K2:L4
+```
+
+---
+
+# Part 5: Create Pivot Chart
+
+## Chart 1: Budget by Region
+
+เลือก Pivot Table
+
+```text
+Pivot_Budget
+```
+
+---
+
+เลือก
+
+```text
+Insert
+→ Column Chart
+```
+
+---
+
+ชื่อกราฟ
+
+```text
+Budget by Region
+```
+
+---
+
+# Chart 2: KPI by Region
+
+สร้าง Pivot ใหม่
+
+Rows
+
+```text
+Region
+```
+
+---
 
 Values
 
@@ -146,38 +426,25 @@ Average KPI_Actual
 
 ---
 
-## ปรับค่า Value Field
-
-เลือก
+สร้าง
 
 ```text
-Value Field Settings
-```
-
-เปลี่ยนจาก
-
-```text
-Sum
-```
-
-เป็น
-
-```text
-Average
+Clustered Column Chart
 ```
 
 ---
 
-## คำถามวิเคราะห์
+ชื่อกราฟ
 
-- ภูมิภาคใดมี KPI สูงที่สุด
-- ภูมิภาคใดมี KPI ต่ำกว่าเป้าหมาย
+```text
+KPI Performance by Region
+```
 
 ---
 
-# Workshop 3 : วิเคราะห์การเบิกจ่าย
+# Chart 3: KPI Target vs Actual
 
-## สร้าง Pivot Table
+สร้าง Pivot ใหม่
 
 Rows
 
@@ -185,37 +452,39 @@ Rows
 Region
 ```
 
+---
+
 Values
 
 ```text
-Budget
-Actual_Spend
+Average KPI_Target
+
+Average KPI_Actual
 ```
 
 ---
 
-## สร้างคอลัมน์คำนวณ
+สร้าง
 
-สูตร
-
-```excel
-=Actual_Spend/Budget
+```text
+Clustered Column Chart
 ```
 
 ---
 
-## คำถามวิเคราะห์
+กำหนดสี
 
-- ภูมิภาคใดมีอัตราเบิกจ่ายสูงสุด
-- ภูมิภาคใดต้องเร่งรัดการเบิกจ่าย
+```text
+Target = Gray
+
+Actual = Green
+```
 
 ---
 
-# ส่วนที่ 3 : วิเคราะห์แนวโน้มรายเดือน
+# Chart 4: Monthly Trend
 
-## Workshop 4 : Monthly Trend
-
-สร้าง Pivot Table
+สร้าง Pivot ใหม่
 
 Rows
 
@@ -223,11 +492,7 @@ Rows
 Month
 ```
 
-Columns
-
-```text
-Region
-```
+---
 
 Values
 
@@ -237,188 +502,31 @@ Sum Budget
 
 ---
 
-## คำถามวิเคราะห์
-
-- ช่วงเดือนใดใช้งบประมาณสูงที่สุด
-- ภูมิภาคใดมีแนวโน้มเพิ่มขึ้น
-
----
-
-# ส่วนที่ 4 : สร้าง Pivot Chart
-
-## Workshop 5 : Budget by Region
-
-เลือก Pivot Table
-
-จากนั้น
+สร้าง
 
 ```text
-Insert
-→ Column Chart
+Line Chart
 ```
 
 ---
 
-## ปรับแต่งกราฟ
-
-Chart Title
+ชื่อกราฟ
 
 ```text
-Budget by Region
+Monthly Budget Trend
 ```
 
 ---
 
-## หลักการเลือกกราฟ
+# Part 6: Create Interactive Dashboard
 
-### Column Chart
+## Insert Slicer
 
-เหมาะสำหรับ
-
-```text
-การเปรียบเทียบ
-```
+คลิก Pivot Table
 
 ---
 
-### Line Chart
-
-เหมาะสำหรับ
-
-```text
-แนวโน้มตามเวลา
-```
-
----
-
-### Doughnut Chart
-
-เหมาะสำหรับ
-
-```text
-สัดส่วน
-```
-
----
-
-# Workshop 6 : KPI by Region
-
-สร้าง Pivot Chart
-
-ข้อมูล
-
-```text
-Average KPI_Actual
-```
-
----
-
-## ตั้งชื่อกราฟ
-
-```text
-KPI Performance by Region
-```
-
----
-
-# ส่วนที่ 5 : สร้าง Dashboard
-
-## ออกแบบ Dashboard
-
-### Dashboard Sheet
-
-สร้าง Sheet ใหม่ชื่อ
-
-```text
-Dashboard
-```
-
----
-
-## KPI Card 1
-
-### Total Budget
-
-สูตร
-
-```excel
-=SUM(tbl_Project[Budget])
-```
-
----
-
-## KPI Card 2
-
-### Budget Utilization
-
-สูตร
-
-```excel
-=SUM(tbl_Project[Actual_Spend])/SUM(tbl_Project[Budget])
-```
-
----
-
-## KPI Card 3
-
-### Number of Projects
-
-สูตร
-
-```excel
-=COUNTA(tbl_Project[Project_ID])
-```
-
----
-
-## KPI Card 4
-
-### Average KPI
-
-สูตร
-
-```excel
-=AVERAGE(tbl_Project[KPI_Actual])
-```
-
----
-
-# Dashboard Layout
-
-```text
-+------------------------------------------------------+
-| KPI CARDS                                             |
-+------------------------------------------------------+
-
-Budget
-Utilization
-Projects
-KPI
-
-+----------------------+----------------------+
-| Budget by Region     | KPI by Region        |
-+----------------------+----------------------+
-
-+---------------------------------------------+
-| Monthly Trend                               |
-+---------------------------------------------+
-
-+---------------------------------------------+
-| Top 10 Provinces                            |
-+---------------------------------------------+
-```
-
----
-
-# ส่วนที่ 6 : Slicer
-
-## Workshop 7 : Interactive Dashboard
-
-### เพิ่ม Slicer
-
-เลือก Pivot Table
-
-จากนั้น
+เลือก
 
 ```text
 PivotTable Analyze
@@ -427,170 +535,254 @@ PivotTable Analyze
 
 ---
 
-### เลือกฟิลด์
+เลือก
 
 ```text
 Region
+
 Province
+
 Month
+
+Project_Name
 ```
 
 ---
 
-## การเชื่อม Slicer ทุก Pivot
+กด
 
-เลือก Slicer
+```text
+OK
+```
+
+---
+
+# Connect Slicer
+
+คลิก
+
+```text
+Slicer
+```
+
+---
+
+เลือก
 
 ```text
 Report Connections
 ```
 
-หรือ
-
-```text
-PivotTable Connections
-```
+---
 
 เลือก Pivot ทุกตัว
 
----
-
-# ส่วนที่ 7 : Top 10 จังหวัด
-
-## สร้าง Pivot Table
-
-Rows
-
 ```text
-Province
-```
+Pivot_KPI
 
-Values
+Pivot_Budget
 
-```text
-Average KPI_Actual
+Pivot_KPI_Region
+
+Pivot_Target_Actual
+
+Pivot_Monthly
 ```
 
 ---
 
-## Sort
+# Test Dashboard
+
+เลือก
 
 ```text
-Largest to Smallest
+Month = Jan
+```
+
+ตรวจสอบ
+
+✅ KPI Cards เปลี่ยน
+
+✅ Charts เปลี่ยน
+
+---
+
+เลือก
+
+```text
+Province = Chiang Mai
+```
+
+Dashboard เปลี่ยนทั้งหมด
+
+---
+
+# Dashboard Layout
+
+```text
++--------------------------------------------------------+
+
+ KPI Cards
+
+ Budget
+ Utilization
+ Projects
+ KPI Achievement
+
++--------------------+--------------------+
+
+ Budget by Region
+
+ KPI by Region
+
++--------------------+--------------------+
+
+ KPI Target vs Actual
+
+ Monthly Trend
+
++--------------------------------------------------------+
+
+ Province Ranking
+
++--------------------------------------------------------+
+
+ Region Slicer
+
+ Province Slicer
+
+ Month Slicer
+
+ Project Slicer
+
++--------------------------------------------------------+
 ```
 
 ---
 
-## Filter
+# Part 7: AI Insight Analysis
+
+## Prompt 1
 
 ```text
-Top 10
-```
+คุณเป็นนักวิเคราะห์ข้อมูลด้านสุขภาพ
 
----
-
-## สร้างกราฟ
-
-```text
-Top 10 KPI Provinces
-```
-
----
-
-# ส่วนที่ 8 : วิเคราะห์ข้อมูลด้วย AI
-
-## Prompt วิเคราะห์ Dashboard
-
-```text
-คุณเป็นนักวิเคราะห์นโยบายสุขภาพ
-
-จาก Dashboard นี้
+วิเคราะห์ Dashboard นี้
 
 1. สรุป Insight สำคัญ 5 ข้อ
-2. จังหวัดที่มีความเสี่ยง
-3. ภูมิภาคที่มี KPI ต่ำกว่าเป้าหมาย
-4. แนวโน้มการเบิกจ่ายงบประมาณ
-5. ข้อเสนอแนะสำหรับผู้บริหาร
+2. จังหวัดที่มี KPI สูงที่สุด
+3. จังหวัดที่มี KPI ต่ำที่สุด
+4. จังหวัดที่ใช้งบประมาณสูงสุด
+5. แนวโน้มการเบิกจ่ายงบประมาณ
 ```
 
 ---
 
-# แบบฝึกหัดท้าย Workshop
+## Prompt 2
+
+```text
+วิเคราะห์ KPI Dashboard
+
+1. พื้นที่ที่ควรติดตาม
+2. พื้นที่ต้นแบบ
+3. ความเสี่ยงที่พบ
+4. ข้อเสนอแนะเชิงนโยบาย
+```
+
+---
+
+## Prompt 3
+
+```text
+สรุปผล Dashboard นี้
+
+สำหรับผู้บริหาร
+
+ไม่เกิน 1 หน้า
+```
+
+---
+
+# Workshop Challenge
 
 ## Task 1
 
 สร้าง Pivot Table
 
-แสดง
-
 ```text
-Budget by Province
+Budget by Region
 ```
 
 ---
 
 ## Task 2
 
-สร้าง Pivot Table
-
-แสดง
+สร้างกราฟ
 
 ```text
-Average KPI by Region
+KPI Target vs Actual
 ```
 
 ---
 
 ## Task 3
 
-สร้าง Pivot Chart
-
-แสดง
+สร้าง KPI Cards
 
 ```text
-Monthly Budget Trend
+Budget
+
+Budget Utilization
+
+Projects
+
+KPI Achievement
 ```
 
 ---
 
 ## Task 4
 
-สร้าง Dashboard
+เพิ่ม Slicer
 
-ประกอบด้วย
+```text
+Region
 
-- KPI Cards
-- Budget by Region
-- KPI by Region
-- Monthly Trend
-- Top 10 Provinces
+Province
+
+Month
+
+Project
+```
 
 ---
 
 ## Task 5
 
-เพิ่ม Slicer
+ใช้ AI วิเคราะห์ Dashboard
 
-- Region
-- Province
-- Month
+สรุป
+
+```text
+5 Key Insights
+```
 
 ---
 
-# ผลลัพธ์ที่คาดหวัง
+# Expected Output
 
-ผู้เรียนสามารถ
+✅ Pivot Table
 
-✅ สร้าง Excel Table
+✅ Pivot Chart
 
-✅ สร้าง Pivot Table
+✅ KPI Card
 
-✅ สร้าง Pivot Chart
+✅ Interactive Dashboard
 
-✅ ใช้ Slicer
+✅ Slicer
 
-✅ สร้าง Dashboard ผู้บริหาร
+✅ Executive Dashboard
 
-✅ วิเคราะห์ Insight ด้วย AI
+✅ AI Insight
 
-✅ นำข้อมูลไปต่อยอดใน Power BI ได้
+✅ พร้อมต่อยอดสู่ Power BI
