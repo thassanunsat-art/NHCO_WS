@@ -85,56 +85,38 @@ tbl_Project
 ---
 
 # ส่วนที่ 2 : สร้าง Pivot Table
-
 ## Workshop 1 : วิเคราะห์งบประมาณตามจังหวัด
-
 ### Step 1
-
 เลือกข้อมูลใน Table
-
 ---
-
 ### Step 2
-
 เลือก
-
 ```text
 Insert
 → Pivot Table
 ```
-
 ---
 
 ### Step 3
-
 เลือก
 
 ```text
 New Worksheet
 ```
-
 ---
-
 ### Step 4
-
 กำหนดฟิลด์
-
 Rows
-
 ```text
 Province
 ```
-
 Values
 
 ```text
 Budget
 ```
-
 ---
-
 ### ผลลัพธ์
-
 Pivot Table จะแสดงงบประมาณรวมแยกตามจังหวัด
 
 ---
