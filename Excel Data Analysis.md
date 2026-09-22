@@ -64,7 +64,7 @@
 
 ---
 
-# Part 1: Data Preparation
+# Part 1: การเตรียมข้อมูล (Data Preparation)
 
 ## Step 1 Import CSV
 
@@ -187,7 +187,7 @@ Budget
 
 ---
 
-# Part 3: Create KPI Pivot Table
+# Part 3: สร้าง Pivot Table
 
 สร้าง Sheet
 
