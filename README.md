@@ -5,6 +5,7 @@ NHSO_Project_Monitoring.csv
 ---
 # วัตถุประสงค์
 ✅ สร้าง Pivot Table
+
 ✅ สร้าง Pivot Chart
 ✅ สร้าง KPI Card
 ✅ สร้าง Interactive Dashboard
