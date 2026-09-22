@@ -1,9 +1,6 @@
-# Workshop: การสร้าง Pivot Table และ Dashboard ด้วย Excel
+# 📊 Workshop 1: การสร้าง Pivot Table และ Dashboard ด้วย Excel
 
 ## วัตถุประสงค์
-
-หลังจากจบ Workshop นี้ ผู้เรียนจะสามารถ
-
 - จัดเตรียมข้อมูลสำหรับการวิเคราะห์
 - สร้าง Excel Table
 - สร้าง Pivot Table
