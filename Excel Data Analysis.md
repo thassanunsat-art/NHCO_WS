@@ -36,34 +36,32 @@
 ---
 
 # ส่วนที่ 1 : เตรียมข้อมูล
+โหลดข้อมูล 2 ไฟล์ 
+1) Thailand_77_Provinces.csv
+2) NHSO_Project_Monitoring.csv
 
 ## Step 1 เปิดไฟล์ข้อมูล
 
 1. เปิด Microsoft Excel
 2. เลือกเมนู
-
    Data → From Text/CSV
-
 3. เลือกไฟล์
-
    NHSO_Project_Monitoring.csv
-
 4. กด Load
+5. เลือกเมนู
+   Home → New Query → New Source → File →Text/Csv 
+6. เลือกไฟล์
+   Thailand_77_Provinces.csv
+7. กด OK
 
 ---
 
 ## Step 2 ตรวจสอบคุณภาพข้อมูล
-
 ตรวจสอบว่า
-
 ✅ ไม่มีแถวว่าง
-
 ✅ ไม่มีคอลัมน์ว่าง
-
 ✅ Header อยู่แถวแรก
-
 ✅ ข้อมูล Budget และ Actual_Spend เป็นตัวเลข
-
 ✅ Satisfaction เป็นตัวเลขทศนิยม
 
 ---
@@ -72,25 +70,18 @@
 
 1. คลิกภายในชุดข้อมูล
 2. กด
-
 ```text
 Ctrl + T
 ```
-
 3. เลือก
-
 ```text
 My Table Has Headers
 ```
-
 4. กด OK
-
 5. เปลี่ยนชื่อ Table เป็น
-
 ```text
 tbl_Project
 ```
-
 ---
 
 # ส่วนที่ 2 : สร้าง Pivot Table
